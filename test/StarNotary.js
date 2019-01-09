@@ -21,7 +21,7 @@ contract('StarNotary', (accs) => {
     it('lets user1 put up their star for sale', async () => {
         let user1 = accounts[1]
         let starId = 2;
-        let starPrice = web3.toWei('.01', "ether")
+        let starPrice = (web3.toWei) ? web3.toWei('.01', "ether") : web3.utils.toWei('.01', "ether")
 
         await instance.createStar('awesome star', starId, {from: user1})
         await instance.putStarUpForSale(starId, starPrice, {from: user1})
@@ -34,7 +34,7 @@ contract('StarNotary', (accs) => {
         let user2 = accounts[2]
 
         let starId = 3
-        let starPrice = web3.toWei('.01', "ether")
+        let starPrice = (web3.toWei) ? web3.toWei('.01', "ether") : web3.utils.toWei('.01', "ether")
 
         await instance.createStar('awesome star', starId, { from: user1 })
         await instance.putStarUpForSale(starId, starPrice, { from: user1 })
@@ -55,7 +55,7 @@ contract('StarNotary', (accs) => {
         let user2 = accounts[2]
 
         let starId = 4
-        let starPrice = web3.toWei('.01', "ether")
+        let starPrice = (web3.toWei) ? web3.toWei('.01', "ether") : web3.utils.toWei('.01', "ether")
 
         await instance.createStar('awesome star', starId, { from: user1 })
         await instance.putStarUpForSale(starId, starPrice, { from: user1 })
@@ -72,7 +72,7 @@ contract('StarNotary', (accs) => {
         let user2 = accounts[2]
 
         let starId = 5
-        let starPrice = web3.toWei('.01', "ether")
+        let starPrice = (web3.toWei) ? web3.toWei('.01', "ether") : web3.utils.toWei('.01', "ether")
 
         await instance.createStar('awesome star', starId, { from: user1 })
         await instance.putStarUpForSale(starId, starPrice, { from: user1 })
